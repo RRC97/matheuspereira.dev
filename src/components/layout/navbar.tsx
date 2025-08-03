@@ -1,5 +1,5 @@
 import { Box, Button, Center, HStack } from "@chakra-ui/react";
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 import { BsEnvelope, BsPerson, BsSuitcaseLg, BsTerminal } from "react-icons/bs";
 
 interface Link {

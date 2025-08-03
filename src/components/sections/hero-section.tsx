@@ -1,5 +1,3 @@
-"use client"
-
 import { Box, Button, Heading, HStack, Icon, Span, Stack } from "@chakra-ui/react"
 import { useEffect, useState } from "react"
 import { BsChevronRight, BsCode, BsDatabase, BsGlobe } from "react-icons/bs"
@@ -68,23 +66,23 @@ export const HeroSection = () => {
 
   return (
     <Stack alignItems={"center"} mt={{ base: 48 }} color={"gray.300"}>
-      <Button colorPalette={"blue"} bg={"blue.950"} variant={"surface"} rounded={"full"} size="sm">
+      <Button colorPalette={"primary"} variant={"outline"} rounded={"full"} size="sm">
         <Box rounded={"full"} width={2} height={2} bg={"green"} animation={"pulse"} />
         Disponível para novos projetos
         <Icon width={2} height={2}>
           <BsChevronRight />
         </Icon>
       </Button>
-      <Heading as="h1" size="2xl" mt={4} mb={2} colorPalette={"cyan"} fontWeight="bold">
+      <Heading size="4xl" mt={4} mb={2} fontWeight="bold">
         Matheus Pereira
       </Heading>
       <Heading as={"h2"}>
         <Span color={"purple.500"} fontWeight="bold" mr={2}>{">_"}</Span>
-        <Span color={"green.500"} fontWeight="bold" mr={2}>{message}|</Span>
+        <Span color={"primary.500"} fontWeight="bold" mr={2}>{message}|</Span>
       </Heading>
-      <Span as={"h3"} fontWeight={"normal"}>
+      <Heading size={"lg"} textAlign={"center"} fontWeight={"normal"}>
         Crio soluções digitais completas que <Span fontWeight={"bold"} color={"white"}>transformam ideias em realidade</Span>. Especializado em desenvolvimento web, mobile e sistemas de alta performance.
-      </Span>
+      </Heading>
       <HStack spaceX={4}>
         {stacks.map((stack, index) => (
           <Span key={index} display="inline-flex" alignItems="center" gap={2}>
