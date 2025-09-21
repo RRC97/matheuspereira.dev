@@ -6,7 +6,7 @@ import { Background } from "./background";
 
 export function MainLayout({ children }: { children: React.ReactNode }) {
   return (
-    <Container colorPalette={"primary"}>
+    <Container colorPalette={"blue"}>
       <Background />
       <Navbar />
       <Drawer />

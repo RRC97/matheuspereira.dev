@@ -1,6 +1,6 @@
-import { Box, Button, Center, HStack } from "@chakra-ui/react";
+import { Box, Button, Center, HStack, Icon } from "@chakra-ui/react";
 import type { ReactNode } from "react";
-import { BsEnvelope, BsPerson, BsSuitcaseLg, BsTerminal } from "react-icons/bs";
+import { LuBriefcase, LuMail, LuTerminal, LuUser } from "react-icons/lu";
 
 interface Link {
   name: string;
@@ -9,19 +9,23 @@ interface Link {
 }
 
 export const Navbar = () => {
+
   const links: Link[] = [
-    { name: "Home", href: "#hero", icon: <BsTerminal /> },
-    { name: "Sobre", href: "#about", icon: <BsPerson /> },
-    { name: "Projetos", href: "#projects", icon: <BsSuitcaseLg /> },
-    { name: "Contato", href: "#contact", icon: <BsEnvelope /> },
+    { name: "Home", href: "#hero", icon: <LuTerminal /> },
+    { name: "Sobre", href: "#about", icon: <LuUser /> },
+    { name: "Projetos", href: "#projects", icon: <LuBriefcase /> },
+    { name: "Contato", href: "#contact", icon: <LuMail /> },
   ];
+
   return (
-    <Center position="fixed" top={4} marginX={"auto"}>
-      <Box px={4} py={3} hideBelow={"sm"} colorPalette={"cyan"} rounded={"full"} shadow="md" w="fit-content" borderWidth={0.2}>
+    <Center>
+      <Box mt={4} px={3} py={3} hideBelow={"sm"} rounded={"full"} shadow="md" borderWidth={0.2}>
         <HStack>
           {links.map(({ name, href, icon }, index) => (
-            <Button key={index} rounded="full" asChild variant={"ghost"} color={"gray.300"} _hover={{ color: "cyan.500" }} _active={{ color: "cyan.600" }} fontWeight="semibold">
-              <a href={href}>{icon} {name}</a>
+            <Button key={index} rounded="full" asChild variant={"ghost"}
+              color={"gray.300"} _hover={{ color: "cyan.500" }}
+              _active={{ color: "cyan.600" }} fontWeight="semibold">
+              <a href={href}><Icon size={"sm"}>{icon}</Icon> {name}</a>
             </Button>
           ))}
         </HStack>

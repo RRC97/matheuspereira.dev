@@ -1,6 +1,7 @@
-import { Box, Button, Heading, HStack, Icon, Span, Stack } from "@chakra-ui/react"
+import { Box, Button, Center, Heading, HStack, Icon, Span, Stack } from "@chakra-ui/react"
 import { useEffect, useState } from "react"
 import { BsChevronRight, BsCode, BsDatabase, BsGlobe } from "react-icons/bs"
+import { LuArrowDown, LuChevronRight, LuCode, LuDatabase, LuGlobe, LuTerminal } from "react-icons/lu";
 
 interface Stack {
   name: string;
@@ -27,9 +28,9 @@ export const HeroSection = () => {
   ];
 
   const stacks: Stack[] = [
-    { name: "Fullstack", icon: <BsCode /> },
-    { name: "React & Angular", icon: <BsGlobe /> },
-    { name: "SQL & MongoDB", icon: <BsDatabase /> },
+    { name: "Fullstack", icon: <LuCode /> },
+    { name: "React & Angular", icon: <LuGlobe /> },
+    { name: "SQL & MongoDB", icon: <LuDatabase /> },
     // { name: "Terminal Lover", icon: <FaTerminal /> },
     // { name: "Versátil e Adaptável", icon: <RxDividerVertical /> },
   ]
@@ -62,34 +63,46 @@ export const HeroSection = () => {
     }
   };
 
-  setTimeout(timer, 100);
+  setTimeout(timer, 50);
 
   return (
-    <Stack alignItems={"center"} mt={{ base: 48 }} color={"gray.300"}>
-      <Button colorPalette={"primary"} variant={"outline"} rounded={"full"} size="sm">
-        <Box rounded={"full"} width={2} height={2} bg={"green"} animation={"pulse"} />
-        Disponível para novos projetos
-        <Icon width={2} height={2}>
-          <BsChevronRight />
-        </Icon>
-      </Button>
-      <Heading size="4xl" mt={4} mb={2} fontWeight="bold">
-        Matheus Pereira
-      </Heading>
-      <Heading as={"h2"}>
-        <Span color={"purple.500"} fontWeight="bold" mr={2}>{">_"}</Span>
-        <Span color={"primary.500"} fontWeight="bold" mr={2}>{message}|</Span>
-      </Heading>
-      <Heading size={"lg"} textAlign={"center"} fontWeight={"normal"}>
-        Crio soluções digitais completas que <Span fontWeight={"bold"} color={"white"}>transformam ideias em realidade</Span>. Especializado em desenvolvimento web, mobile e sistemas de alta performance.
-      </Heading>
-      <HStack spaceX={4}>
-        {stacks.map((stack, index) => (
-          <Span key={index} display="inline-flex" alignItems="center" gap={2}>
-            <Icon color={"blue.400"} width={4} height={4} fontWeight={"bold"}>{stack.icon}</Icon> {stack.name}
-          </Span>
-        ))}
-      </HStack>
-    </Stack>
+    <Center>
+      <Stack mt={{ base: 32 }} maxW={"xl"} alignItems={"center"} gap={6} color={"fg.muted"}>
+        <Button variant={"outline"} rounded={"full"} size="sm">
+          <Box rounded={"full"} width={2} height={2} bg={"green"} animation={"pulse"} />
+          Disponível para novos projetos
+          <Icon>
+            <BsChevronRight />
+          </Icon>
+        </Button>
+        <Heading size="6xl" fontWeight="bold" color={"white"}>
+          Matheus Pereira
+        </Heading>
+        <Heading size={"3xl"} fontWeight={"medium"}>
+          <Icon color={"purple.500"} mr={2} animation={"pulse"}><LuTerminal /></Icon>
+          <Span color={"colorPalette.500"} mr={2}>{message}|</Span>
+        </Heading>
+        <Heading size={"xl"} textAlign={"center"} fontWeight={"normal"}>
+          Crio soluções digitais completas que
+          <Span fontWeight={"bold"} color={"white"}> transformam ideias em realidade. </Span>
+          Especializado em desenvolvimento web, mobile e sistemas de alta performance.
+        </Heading>
+        <HStack spaceX={4}>
+          {stacks.map((stack, index) => (
+            <HStack key={index} alignItems="center" justifyContent={"center"} gap={2}>
+              <Icon size={"md"} color={"colorPalette.400"}>{stack.icon}</Icon> {stack.name}
+            </HStack>
+          ))}
+        </HStack>
+        <HStack>
+          <Button href="#projects" variant={"solid"}>
+            Ver Projetos <Icon size={"sm"}><LuArrowDown /></Icon>
+          </Button>
+          <Button href="#about" variant={"outline"}>
+            Sobre Mim <Icon size={"sm"}><LuChevronRight /></Icon>
+          </Button>
+        </HStack>
+      </Stack>
+    </Center>
   )
 }

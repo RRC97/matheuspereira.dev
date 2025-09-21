@@ -1,31 +1,29 @@
 
-import { IconButton, Portal, Drawer as UIDrawer, type IconButtonProps } from "@chakra-ui/react";
-import { FaBurger } from "react-icons/fa6";
+import { CloseButton, IconButton, Portal, Drawer as UIDrawer } from "@chakra-ui/react";
 import { LuMenu } from "react-icons/lu";
 
 export function Drawer() {
-  const DrawerTriggerButton = ({ children, ...props }: { children: React.ReactNode } & IconButtonProps) => {
-    return (
-      <IconButton rounded={"full"} variant={"subtle"} bg={"gray.muted"} borderColor={"primary.800"} right={4} top={4} position={"fixed"} zIndex={1000} {...props}>
-        {children}
-      </IconButton>
-    )
-  }
   return (
     <UIDrawer.Root>
       <UIDrawer.Trigger asChild>
-        <DrawerTriggerButton>
+        <IconButton
+          rounded={"full"}
+          variant={"subtle"}
+          bg={"gray.muted"}
+          borderColor={"colorPalette.800"}
+          right={4}
+          top={4}
+          position={"fixed"}
+          zIndex={1000}>
           <LuMenu />
-        </DrawerTriggerButton>
+        </IconButton>
       </UIDrawer.Trigger>
       <Portal>
         <UIDrawer.Backdrop />
-        <UIDrawer.Positioner height={"lg"} top={10}>
+        <UIDrawer.Positioner>
           <UIDrawer.Content>
             <UIDrawer.CloseTrigger asChild>
-              <DrawerTriggerButton position={"fixed"}>
-                <FaBurger />
-              </DrawerTriggerButton>
+              <CloseButton />
             </UIDrawer.CloseTrigger>
             <UIDrawer.Header>
               <UIDrawer.Title>Matheus Pereira</UIDrawer.Title>

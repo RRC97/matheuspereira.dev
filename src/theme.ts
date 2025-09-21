@@ -27,6 +27,7 @@ const customConfig = defineConfig({
     semanticTokens: {
       colors: {
         primary: {
+          outline: { value: "{colors.primary.500}" },
           solid: { value: "{colors.primary.500}" },
           contrast: { value: "{colors.primary.100}" },
           fg: { value: "{colors.primary.700}" },
