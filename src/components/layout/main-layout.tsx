@@ -1,4 +1,4 @@
-import { Center, Container } from "@chakra-ui/react";
+import { Container } from "@chakra-ui/react";
 import { Drawer } from "./drawer";
 import { Footer } from "./footer";
 import { Navbar } from "./navbar";
