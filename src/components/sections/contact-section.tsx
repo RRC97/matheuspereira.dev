@@ -65,25 +65,25 @@ export const ContactSection = () => {
                       <Field.Root required>
                         <Field.Label>Nome</Field.Label>
                         <label></label>
-                        <Input name="name" type="text" placeholder="Seu nome" />
+                        <Input name="name" type="text" placeholder="Seu nome" disabled />
                       </Field.Root>
 
                       <Field.Root required>
                         <Field.Label>E-mail</Field.Label>
-                        <Input name="email" type="email" placeholder="Seu e-mail" />
+                        <Input name="email" type="email" placeholder="Seu e-mail" disabled />
                       </Field.Root>
 
                       <Field.Root required>
                         <Field.Label>Assunto</Field.Label>
-                        <Input name="subject" type="text" placeholder="Assunto da sua mensagem" />
+                        <Input name="subject" type="text" placeholder="Assunto da sua mensagem" disabled />
                       </Field.Root>
 
                       <Field.Root required>
                         <Field.Label>Mensagem</Field.Label>
-                        <Textarea name="message" placeholder="Digite sua mensagem" rows={6} />
+                        <Textarea name="message" placeholder="Digite sua mensagem" rows={6}  disabled />
                       </Field.Root>
 
-                      <Button type="submit" colorScheme="blue" w="full">
+                      <Button type="submit" colorScheme="blue" w="full" disabled>
                         Enviar Mensagem
                       </Button>
                     </VStack>
