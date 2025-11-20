@@ -17,7 +17,7 @@ export const Background = () => {
   useEffect(() => {
     const createParticles = () => {
       const newParticles: Particle[] = [];
-      for (let i = 0; i < 30; i++) {
+      for (let i = 0; i < 100; i++) {
         newParticles.push({
           id: i,
           x: Math.random() * 100,
@@ -40,10 +40,8 @@ export const Background = () => {
         y: (particle.y + particle.speedY + 100) % 100,
       })));
     };
-
-    const interval = setInterval(animateParticles, 50);
-    return () => clearInterval(interval);
   }, []);
+
 
   return (
     <Box position={"fixed"} inset={0} pointerEvents={"none"} overflow={"hidden"}>

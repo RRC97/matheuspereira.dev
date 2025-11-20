@@ -2,6 +2,11 @@ import { createSystem, defaultConfig, defineConfig } from "@chakra-ui/react"
 
 const customConfig = defineConfig({
   theme: {
+    layerStyles: {
+      "body": {
+        scrollBeahavior: "smooth",
+      }
+    },
     tokens: {
       fonts: {
         body: { value: "Inter, system-ui, sans-serif" },
@@ -22,6 +27,16 @@ const customConfig = defineConfig({
           900: { value: "#112640" },
           950: { value: "#0A1626" },
         },
+        brand: {
+          bg: { value: '#0c0e15' },
+          surface: { value: '#161b22' },
+          elevated: { value: '#21262d' },
+          primary: { value: '#58a6ff' },
+          accent: { value: '#7c3aed' },
+          success: { value: '#3fb950' },
+          text: { value: '#f0f6fc' },
+          muted: { value: '#8b949e' },
+        }
       },
     },
     semanticTokens: {
@@ -36,6 +51,16 @@ const customConfig = defineConfig({
           emphasized: { value: "{colors.primary.300}" },
           focusRing: { value: "{colors.primary.500}" },
         },
+        brand: {
+          bg: { value: '#0c0e15' },
+          surface: { value: '#161b22' },
+          elevated: { value: '#21262d' },
+          primary: { value: '#58a6ff' },
+          accent: { value: '#7c3aed' },
+          success: { value: '#3fb950' },
+          text: { value: '#f0f6fc' },
+          muted: { value: '#8b949e' },
+        }
       },
     },
   }

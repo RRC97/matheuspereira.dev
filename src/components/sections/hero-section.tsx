@@ -73,8 +73,8 @@ export const HeroSection = () => {
   setTimeout(timer, 50);
 
   return (
-    <Center>
-      <Stack mt={{ base: 32 }} maxW={"xl"} alignItems={"center"} gap={6} color={"fg.muted"}>
+    <Center my={32}>
+      <Stack maxW={"xl"} alignItems={"center"} gap={6} color={"fg.muted"}>
         <Button variant={"outline"} rounded={"full"} size="sm">
           <Box rounded={"full"} width={2} height={2} bg={"green"} animation={"pulse"} />
           Disponível para novos projetos

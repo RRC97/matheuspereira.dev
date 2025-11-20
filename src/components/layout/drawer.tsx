@@ -14,7 +14,9 @@ export function Drawer() {
           right={4}
           top={4}
           position={"fixed"}
-          zIndex={1000}>
+          zIndex={1000}
+          hidden={true}
+          >
           <LuMenu />
         </IconButton>
       </UIDrawer.Trigger>
