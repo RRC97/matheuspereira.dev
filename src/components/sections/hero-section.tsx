@@ -2,7 +2,6 @@ import { Box, Button, Center, Heading, HStack, Icon, Span, Stack } from "@chakra
 import { useEffect, useState } from "react"
 import { BsChevronRight } from "react-icons/bs"
 import { LuArrowDown, LuChevronRight, LuCode, LuDatabase, LuGlobe, LuTerminal } from "react-icons/lu";
-import { useNavigate } from "react-router";
 
 interface Stack {
   name: string;
@@ -36,8 +35,6 @@ export const HeroSection = () => {
     // { name: "Versátil e Adaptável", icon: <RxDividerVertical /> },
   ];
 
-  const navigate = useNavigate();
-
   const randomIndex = Math.floor(Math.random() * messages.length);
   const [currentMessage, setCurrentMessage] = useState(messages[randomIndex]);
   const [message, setMessage] = useState("");
@@ -50,7 +47,7 @@ export const HeroSection = () => {
   }, [currentMessage, messageIndex]);
 
   const clickButton = (link: string) => {
-    navigate(link);
+    document.getElementById(link)?.scrollIntoView({ behavior: 'smooth' })
   };
 
   const timer = () => {
@@ -102,10 +99,10 @@ export const HeroSection = () => {
           ))}
         </HStack>
         <HStack>
-          <Button onClick={() => clickButton("#projects")} variant={"solid"}>
+          <Button onClick={() => clickButton("projects")} variant={"solid"}>
             Ver Projetos <Icon size={"sm"}><LuArrowDown /></Icon>
           </Button>
-          <Button onClick={() => clickButton("#about")} variant={"outline"}>
+          <Button onClick={() => clickButton("about")} variant={"outline"}>
             Sobre Mim <Icon size={"sm"}><LuChevronRight /></Icon>
           </Button>
         </HStack>

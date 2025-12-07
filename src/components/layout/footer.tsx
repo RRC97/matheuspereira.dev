@@ -23,7 +23,7 @@ const Footer = () => {
           <Box>
             <Heading color="white" mb={3}>Links Rápidos</Heading>
             <Stack gap={2}>
-              <Link href="#about" color="gray.500" scrollBehavior={"smooth"}>
+              <Link href="#about" color="gray.500">
                 Sobre Mim
               </Link>
               <Link href="#projects" color="gray.500">

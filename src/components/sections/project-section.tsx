@@ -1,5 +1,5 @@
-import { Box, Button, Text, Image, Flex, Stack, Badge, Link, Heading, Card } from "@chakra-ui/react";
-import { LuBuilding2, LuChartBar, LuExternalLink, LuGithub, LuGlobe, LuPackage, LuTruck } from "react-icons/lu";
+import { Box, Button, Text, Image, Flex, Stack, Badge, Card } from "@chakra-ui/react";
+import { LuBuilding2, LuExternalLink, LuGithub, LuPackage, LuTruck } from "react-icons/lu";
 import { BrandHeading } from "../ui/brand-heading";
 
 export const ProjectSection = () => {
@@ -9,7 +9,7 @@ export const ProjectSection = () => {
       description: 'Plataforma completa de logística para transportadora paranaense. Sistema de rastreamento em tempo real, gestão de entregas, dashboard administrativo e portal do cliente.',
       longDescription: 'Solução completa para transportadora que atua no Paraná, incluindo sistema de gestão de entregas, rastreamento GPS, portal do cliente e dashboard gerencial.',
       stack: ['Laravel', 'Tailwind', 'MySQL', 'PHP'],
-      image: 'photo-1586528116311-ad8dd3c8310d',
+      image: 'osguridopacotinho.png',
       link: 'https://osguridopacotinho.com.br',
       isReal: true,
       icon: <LuTruck size={24} />,
@@ -20,7 +20,7 @@ export const ProjectSection = () => {
       description: 'Site institucional moderno para clínica médica com sistema de agendamento online, portal do paciente e gestão de consultas integrada.',
       longDescription: 'Plataforma médica completa com agendamento online, portal do paciente, histórico médico e sistema de gestão para clínicas.',
       stack: ['WordPress', 'PHP', 'MySQL', 'Elementor'],
-      image: 'photo-1576091160399-112ba8d25d1f',
+      image: 'multimedrj.png',
       link: 'https://multimedrj.com.br',
       isReal: true,
       icon: <LuBuilding2 size={24} />,
@@ -31,34 +31,12 @@ export const ProjectSection = () => {
       description: 'Marketplace de logística conectando transportadores e embarcadores. Sistema de cotações automáticas, rastreamento e gestão financeira.',
       longDescription: 'Plataforma que conecta transportadores e embarcadores, facilitando cotações, agendamentos e acompanhamento de cargas.',
       stack: ['Laravel', 'Tailwind', 'MySQL', 'PHP'],
-      image: 'photo-1518770660439-4636190af475',
+      image: 'cargasja.png',
       link: 'https://cargasja.com.br',
       isReal: true,
       icon: <LuPackage size={24} />,
       category: 'Marketplace & Logística'
     },
-    {
-      name: 'Dashboard Analítico',
-      description: 'Painel administrativo avançado com métricas em tempo real, relatórios customizados e integração com múltiplas fontes de dados.',
-      longDescription: 'Sistema de Business Intelligence com dashboards interativos, relatórios customizados e análise de dados em tempo real.',
-      stack: ['React', 'Node.js', 'MongoDB', 'Chart.js', 'Socket.io'],
-      image: 'photo-1551288049-bebda4e38f71',
-      link: '#',
-      isReal: false,
-      icon: <LuChartBar size={24} />,
-      category: 'Business Intelligence'
-    },
-    {
-      name: 'Landing Page Premium',
-      description: 'Landing page de alta conversão otimizada para SEO, com design responsivo, formulários inteligentes e integração com CRM.',
-      longDescription: 'Landing page profissional com foco em conversão, otimizada para SEO e integrada com ferramentas de marketing.',
-      stack: ['Next.js', 'Tailwind CSS', 'TypeScript', 'Vercel'],
-      image: 'photo-1460925895917-afdab827c52f',
-      link: '#',
-      isReal: false,
-      icon: <LuGlobe size={24} />,
-      category: 'Marketing Digital'
-    }
   ];
 
   const goToLink = (url: string) => {
@@ -88,7 +66,7 @@ export const ProjectSection = () => {
                 <Box position="relative" role="group">
                   <Box borderRadius="xl" p={4} borderWidth={2} boxShadow="lg">
                     <Image
-                      src={`https://images.unsplash.com/${project.image}?auto=format&fit=crop&w=800&q=80`}
+                      src={`/imgs/${project.image}`}
                       alt={project.name}
                       borderRadius="lg"
                       objectFit="cover"
