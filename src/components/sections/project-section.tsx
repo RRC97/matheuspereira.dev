@@ -44,7 +44,7 @@ export const ProjectSection = () => {
   };
 
   return (
-    <Box as="section" id="projects" py={16} px={4}>
+    <Box as="section" id="projects" px={4} py={20}>
       <Box maxW="7xl" mx="auto">
         <Box textAlign="center" mb={16}>
           <BrandHeading fontSize="4xl" fontWeight="bold" mb={4}>Projetos em Destaque</BrandHeading>
@@ -53,12 +53,11 @@ export const ProjectSection = () => {
           </Text>
         </Box>
 
-        <Stack p={16}>
+        <Stack gap={16}>
           {projects.map((project, index) => (
             <Flex
               key={index}
               direction={{ base: 'column', lg: index % 2 === 0 ? 'row' : 'row-reverse' }}
-              gap={12}
               alignItems="center"
             >
               {/* Project Image */}
@@ -84,7 +83,7 @@ export const ProjectSection = () => {
               </Box>
 
               {/* Project Info */}
-              <Box w="full" lg={{ w: '50%' }} p={6}>
+              <Box w="full" lg={{ w: '50%' }}>
                 <Stack p={4}>
                   <Flex alignItems="center" gap={3}>
                     <Box color="blue.500">
@@ -114,31 +113,31 @@ export const ProjectSection = () => {
                       </Badge>
                     ))}
                   </Flex>
+                  {/* Action Buttons */}
+                  <Flex mt={4}>
+                    {project.isReal ? (
+                      <Button
+                        as="a"
+                        onClick={() => goToLink(project.link)}
+                        colorScheme="blue"
+                      >
+                        <LuExternalLink size={16} /> Ver Projeto
+                      </Button>
+                    ) : (
+                      <Button disabled={true} colorScheme="gray">
+                        <LuGithub size={16} /> Projeto Interno
+                      </Button>
+                    )}
+                  </Flex>
                 </Stack>
 
-                {/* Action Buttons */}
-                <Flex gap={4} pt={4}>
-                  {project.isReal ? (
-                    <Button
-                      as="a"
-                      onClick={() => goToLink(project.link)}
-                      colorScheme="blue"
-                    >
-                      <LuExternalLink size={16} /> Ver Projeto
-                    </Button>
-                  ) : (
-                    <Button disabled={true} colorScheme="gray">
-                      <LuGithub size={16} /> Projeto Interno
-                    </Button>
-                  )}
-                </Flex>
               </Box>
             </Flex>
           ))}
         </Stack>
 
         {/* Call to Action */}
-        <Card.Root maxW={"2xl"} mx={"auto"} textAlign={"center"}>
+        <Card.Root maxW={"2xl"} mx={"auto"} textAlign={"center"} mt={20}>
           <Card.Body>
             <Text as="h3" fontSize="2xl" fontWeight="bold" color="white" mb={4}>
               Pronto para o próximo projeto?

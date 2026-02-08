@@ -42,7 +42,7 @@ export const AboutSection = () => {
   ];
 
   return (
-    <Box as="section" id="about" py="20" px="4" bg="brand.surface">
+    <Box as="section" id="about" bg="brand.surface" py={20}>
       <Container maxW="7xl">
         <Box textAlign="center" mb="16">
           <BrandHeading fontSize="4xl" fontWeight="bold" mb="4">Sobre Mim</BrandHeading>
@@ -54,7 +54,7 @@ export const AboutSection = () => {
         <Grid templateColumns={{ base: '1fr', lg: 'repeat(2, 1fr)' }} gap="16" alignItems="start" mb="20">
           {/* Left Column - Personal Info */}
           <Box>
-            <Box borderWidth="1px" borderRadius="xl" p="8">
+            <Box borderWidth="1px" borderRadius="xl" p={4}>
               <Text fontSize="2xl" fontWeight="bold" mb="6">Informações Pessoais</Text>
               <Box>
                 <Box display="flex" alignItems="center" gap="3" color="brand.muted" mb="4">
@@ -93,7 +93,7 @@ export const AboutSection = () => {
           </Box>
 
           {/* Skills */}
-          <Box borderWidth="1px" borderRadius="xl" p="8">
+          <Box borderWidth="1px" borderRadius="xl" p="4">
             <Text fontSize="2xl" fontWeight="bold" mb="6">Stack Tecnológico</Text>
             <Grid templateColumns={{ base: 'repeat(2, 1fr)', md: 'repeat(3, 1fr)' }} gap="3">
               {skills.map((skill, index) => (

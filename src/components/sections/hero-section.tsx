@@ -70,8 +70,8 @@ export const HeroSection = () => {
   setTimeout(timer, 50);
 
   return (
-    <Center my={32}>
-      <Stack maxW={"xl"} alignItems={"center"} gap={6} color={"fg.muted"}>
+    <Center>
+      <Stack maxW={"xl"} alignItems={"center"} gap={6} color={"fg.muted"} p={4} py={32}>
         <Button variant={"outline"} rounded={"full"} size="sm">
           <Box rounded={"full"} width={2} height={2} bg={"green"} animation={"pulse"} />
           Disponível para novos projetos
@@ -79,10 +79,10 @@ export const HeroSection = () => {
             <BsChevronRight />
           </Icon>
         </Button>
-        <Heading size="6xl" fontWeight="bold" color={"white"}>
+        <Heading size="6xl" fontWeight="bold" color={"white"} textAlign={"center"}>
           Matheus Pereira
         </Heading>
-        <Heading size={"3xl"} fontWeight={"medium"}>
+        <Heading size={"3xl"} fontWeight={"medium"} textAlign={"center"}>
           <Icon color={"purple.500"} mr={2} animation={"pulse"}><LuTerminal /></Icon>
           <Span color={"colorPalette.500"} mr={2}>{message}|</Span>
         </Heading>
@@ -93,7 +93,7 @@ export const HeroSection = () => {
         </Heading>
         <HStack spaceX={4}>
           {stacks.map((stack, index) => (
-            <HStack key={index} alignItems="center" justifyContent={"center"} gap={2}>
+            <HStack key={index} justifyContent={"center"} gap={2}>
               <Icon size={"md"} color={"colorPalette.400"}>{stack.icon}</Icon> {stack.name}
             </HStack>
           ))}
